@@ -449,7 +449,7 @@ const logout = async (req, res, next) => {
 
 const updateProfile = async (req, res) => {
   try {
-    const { name, email, phone } = req.body;
+    const { name, email, phone } = req.body[0];
     if (req.user.role != 'Khách hàng') {
       const staff = await Staff.findOne({
         where: {

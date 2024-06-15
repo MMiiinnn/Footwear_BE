@@ -10,9 +10,9 @@ const db = {};
 
 let sequelize;
 const customizeConfig = {
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  dialect: process.env.DB_DIALECT,
+  host: 'localhost',
+  port: '3306',
+  dialect: 'mysql',
   logging: false,
   query: {
     raw: true,
@@ -21,9 +21,9 @@ const customizeConfig = {
 };
 
 sequelize = new Sequelize(
-  process.env.DB_DATABASE_NAME,
-  process.env.DB_USERNAME,
-  process.env.DB_PASSWORD,
+  'footwear',
+  'root',
+  'root',
   customizeConfig,
 );
 

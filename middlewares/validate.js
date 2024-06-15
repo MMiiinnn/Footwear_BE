@@ -278,7 +278,7 @@ const checkChangePassword = async (req, res, next) => {
 
 const checkUpdateProfile = async (req, res, next) => {
   try {
-    const { email, name, phone } = req.body;
+    const { email, name, phone } = req.body[0];
     if (isExist(email) && isExist(name) && isExist(phone)) {
       if (isValidPhoneNumber(phone)) {
         next();
